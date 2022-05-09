@@ -122,10 +122,10 @@ title("Throttle Command and Sampled State vs. Time")
 figure(2)
 
 yyaxis left
-plot(speed_time_samp,speed_samp)
+plot(speed_time_samp,abs(speed_samp))
 yline(.7)
 ylabel('5Hz Sampled Speed State [m/s]');
-ylim([0 5])
+ylim([0 2.5])
 
 yyaxis right
 plot(crit_time,critic_value,"--")
@@ -136,7 +136,8 @@ title("Critic Model Value Output at 5Hz Sampled State")
 
 
 figure(3)
-plot(speed_time,lowpass(speed,5,100))
+%plot(speed_time,lowpass(speed,5,100))
+plot(speed_time,speed)
 hold on
 plot(speed_time_samp,speed_samp)
 title("Differing Sampling Time Speed vs. Time")

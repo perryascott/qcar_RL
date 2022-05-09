@@ -9,6 +9,9 @@ Buffer data:
 network data:
 -all the existing network files are for the reference velocity task
 
+bag data:
+-all these files contain ROStopic information which contains info about vehicle states, actions, and critic and policy network outputs in real time.
+
 buffer_node:
 This is a python-ROS script which was run on the physical vehicle using SSH to collect state information in real-time. Additionally, offline trained networks could be moved onto the vehicle computer and tested using this script as well as for gathering online training data. Due to the nature of the system, you will need a RC car which runs ROS-Python to run this script
 
@@ -17,6 +20,9 @@ Used to train policy and critic network using DDPG. Utilizes the chosen buffer d
 
 learning_node_vel:
 Similar to learning node but more problem specific for the velocity task
+
+readData.m:
+used to read and plot bagData captured with ROS in real time.
 
 Testing:
 learning_node can be ran and the critic and actor loss every 10000 learning iterations will be shown.

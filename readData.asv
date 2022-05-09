@@ -84,63 +84,61 @@ speed_time_samp = zeros(length(pose_time)-1,1);
 period = .2;
 disc_time = .2;
 prev_index = 1;
-arr_index = 1
 for i=1:length(x)-1
     if(pose_time(i+1) > disc_time)
         disc_time = disc_time + period;
-        
-    
-        x_vel_samp(arr_index) = (x(i+1)-x(prev_index))/.2;
-        y_vel_samp(arr_index) = (y(i+1)-y(prev_index))/.2;
-        z_vel_samp(arr_index) = (z(i+1)-z(prev_index))/.2;
-        speed_time_samp(arr_index) = pose_time(i+1);
-        prev_index = i;
-        arr_index = arr_index + 1;
-    end
-end
-speed_samp = (x_vel_samp.^2 + y_vel_samp.^2 + z_vel_samp.^2).^(1/2);
 
-speed_samp = speed_samp(1:find(speed_samp,1,'last'))
-speed_time_samp = speed_time_samp(1:find(speed_time_samp,1,'last'))
+    
+        x_vel(i) = (x(i+1)-x(prev_index))/.2;
+        y_vel(i) = (y(i+1)-y(prev_index))/dT;
+        z_vel(i) = (z(i+1)-z(i))/dT;
+        speed_time(i) = pose_time(i)
+end
+
+
 
 
 close all
 figure(1)
-
-yyaxis left
-plot(speed_time_samp,speed_samp)
-ylabel('5Hz Sampled Speed State [m/s]');
-ylim([-.5 2])
-
-yyaxis right
+plot(speed_time,speed)
+hold on
 plot(command_time,long_command)
-ylabel('Throttle Command []');
-%ylim([-40 40])
-xlabel('Time [s]')
-title("Throttle Command and Sampled State vs. Time")
+legend(["Velocity", "Throttle Command"])
 
 figure(2)
+%plot(speed_time,speed*40 - 20)
+%hold on
+%plot(crit_time,critic_value)
+%yline(.7*40 - 20)
+%legend(["Speed", "Critic Value"])
+
 
 yyaxis left
-plot(speed_time_samp,speed_samp)
+plot(speed_time,lowpass(speed,5,100))
 yline(.7)
-ylabel('5Hz Sampled Speed State [m/s]');
+ylabel('Speed [m/s]');
 ylim([0 5])
 
 yyaxis right
 plot(crit_time,critic_value,"--")
 ylabel('Critic Value');
 ylim([-40 40])
-xlabel('Time [s]')
-title("Critic Model Value Output at 5Hz Sampled State")
+xlabel('Time (sec)')
 
 
-figure(3)
-plot(speed_time,lowpass(speed,5,100))
-hold on
-plot(speed_time_samp,speed_samp)
-title("Differing Sampling Time Speed vs. Time")
-xlabel("Time [s]")
-ylabel("Speed [m/s]")
-legend(["Velocity Sampled at 100Hz", "Velocity Sampled at 5 Hz"])
+
+
+%{
+[ax h1 h2]=plotyy(speed_time,lowpass(speed,5,100),crit_time,critic_value);
+ylabel(ax(2),'Critic Value');
+ylabel(ax(1),'Speed [m/s]');
+xlabel(ax(2),'Time (sec)')
+hold(ax(1),'on');
+hold(ax(2),'on');
+h2.LineStyle = '--';
+
+plot(ax(1),x,y(2,:))
+plot(ax(2),x,z(2,:))
+%}
+
 

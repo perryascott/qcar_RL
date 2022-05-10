@@ -1,28 +1,66 @@
-# qcar_RL
 
-The following project involved using a reinforcement learning algorithm, deep deterministic policy gradient (DDPG) to learn several tasks for a physical scaled autonomous vehicle called the Qcar. Several tests were done with hand controlled episodes and state and action information was recorded in the buffer data file. The buffer data was used to train several policy and critic networks located in the network_data folder.
+# Autonomous Driving with Reinforcement Learning 
 
-Buffer data:
--the buffer files labeled "ref_path..." were used in the task of trying to the follow the circle path in the room. 
--files labeled "ref_vel..." were used in the reference velocity task.
+This project implements the DDPG algorithm to a scaled car, aiming to train it for a constant-velocity tracking and a circular path tracking tasks.
 
-network data:
--all the existing network files are for the reference velocity task
+![](Readme_file/QCar.jpg)
+![](Readme_file/GPS.png)
 
-bag data:
--all these files contain ROStopic information which contains info about vehicle states, actions, and critic and policy network outputs in real time.
+## Description
 
-buffer_node:
-This is a python-ROS script which was run on the physical vehicle using SSH to collect state information in real-time. Additionally, offline trained networks could be moved onto the vehicle computer and tested using this script as well as for gathering online training data. Due to the nature of the system, you will need a RC car which runs ROS-Python to run this script
+An in-depth paragraph about your project and overview of use.
 
-learning_node:
-Used to train policy and critic network using DDPG. Utilizes the chosen buffer data to run the script. Buffer rewards can be recalculated using this script as well.
+## Getting Started
 
-learning_node_vel:
-Similar to learning node but more problem specific for the velocity task
+### Dependencies
 
-readData.m:
-used to read and plot bagData captured with ROS in real time.
+* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* ex. Windows 10
 
-Testing:
-learning_node can be ran and the critic and actor loss every 10000 learning iterations will be shown.
+### Installing
+
+* How/where to download your program
+* Any modifications needed to be made to files/folders
+
+### Executing program
+
+* How to run the program
+* Step-by-step bullets
+```
+code blocks for commands
+```
+
+## Help
+
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
+
+## Authors
+
+Contributors names and contact info
+
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)

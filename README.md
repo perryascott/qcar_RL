@@ -39,13 +39,13 @@ This file was used to train policy and critic network using DDPG. It utilizes th
 
 This file is similar to the learning node file but more problem specific for the velocity task.
 
-### Testing
+## Testing
 
-This is a testing file to show some results without application to the RC car. Learning_node file can be ran and the critic and actor loss for every 10000 learning iterations will be shown.
+Unfortunately, the reader will need a programmable RC car to implement our project to the hardware. `learning_node2.py` file can be ran to view the critic and actor loss for every 10000 learning iterations.
 
 ## Dependencies
 
-The algorithm was run in Python3. External dependencies are:
+The algorithm was ran in Python3. External dependencies are:
 
 * `numpy` 
 * `matplotlib` 

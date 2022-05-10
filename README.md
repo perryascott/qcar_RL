@@ -52,6 +52,13 @@ The algorithm was ran in Python3. External dependencies are:
 * `tensorflow`
 * `pickle`
 
+## Results
+
+The following clip shows a demonstration of a RC car tracking a constant speed via DDPG 
+
+
+![](Readme_file/result.gif)
+
 ## Authors
 
 Contributors are:

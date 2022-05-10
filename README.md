@@ -4,11 +4,10 @@
 This project implements the DDPG algorithm to a scaled car, aiming to train it for a constant-velocity tracking and a circular path tracking tasks.
 
 ![](Readme_file/QCar.jpg)
-![](Readme_file/GPS.png)
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+DDPG is the abbreviation of the Deep Deterministic Policy Gradient algorithm. It is a modification based on the deep Q-network (DQN) and the deterministic policy gradient (DPG) algorithms, such that it is able to use neural network function approximators to learn action functions and policies in continuous observation and action spaces. It also uses a replay buffer and a delayed update target network to deal with the unstable feature of the nonlinear function approximations via neural networks. Detailed explanations of DDPG is included in our report. We also refer readers to read the original papers of DDPG, DQN, and DPG to gain insights.
 
 ## Getting Started
 

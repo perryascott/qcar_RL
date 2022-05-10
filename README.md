@@ -43,57 +43,59 @@ This file is similar to the learning node file but more problem specific for the
 
 This is a testing file to show some results without application to the RC car. Learning_node file can be ran and the critic and actor loss for every 10000 learning iterations will be shown.
 
-## Getting Started
+## Dependencies
 
-### Dependencies
+The algorithm was run in Python3. External dependencies are:
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* `numpy` 
+* `matplotlib` 
+* `tensorflow`
+* `pickle`
 
 ## Authors
 
-Contributors names and contact info
+Contributors are:
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Perry Scott, Masters student, Mechanical Engineering Department, The University of Texas at Austin
 
-## Version History
+Bryant Zhou, Masters student, Mechanical Engineering Department, The University of Texas at Austin
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+## Paper
 
-## License
+This is the Deep Q-network (DQN) paper:
+```
+@article{mnih2015human,
+  title={Human-level control through deep reinforcement learning},
+  author={Mnih, Volodymyr and Kavukcuoglu, Koray and Silver, David and Rusu, Andrei A and Veness, Joel and Bellemare, Marc G and Graves, Alex and Riedmiller, Martin and Fidjeland, Andreas K and Ostrovski, Georg and others},
+  journal={nature},
+  volume={518},
+  number={7540},
+  pages={529--533},
+  year={2015},
+  publisher={Nature Publishing Group}
+}
+```
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This is the Deterministic Policy Gradient (DPG) paper:
+```
+@inproceedings{silver2014deterministic,
+  title={Deterministic policy gradient algorithms},
+  author={Silver, David and Lever, Guy and Heess, Nicolas and Degris, Thomas and Wierstra, Daan and Riedmiller, Martin},
+  booktitle={International conference on machine learning},
+  pages={387--395},
+  year={2014},
+  organization={PMLR}
+}
+```
 
-## Acknowledgments
+This is the Deep Deterministic Policy Gradient (DDPG) paper:
+```
+@article{lillicrap2015continuous,
+  title={Continuous control with deep reinforcement learning},
+  author={Lillicrap, Timothy P and Hunt, Jonathan J and Pritzel, Alexander and Heess, Nicolas and Erez, Tom and Tassa, Yuval and Silver, David and Wierstra, Daan},
+  journal={arXiv preprint arXiv:1509.02971},
+  year={2015}
+}
+```
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+

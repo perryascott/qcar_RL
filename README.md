@@ -59,6 +59,10 @@ The following clip shows a demonstration of a RC car tracking a constant speed v
 
 ![](Readme_file/result.gif)
 
+## Video Presentation
+
+We made a video to describe our project, and it can be accessed through `https://drive.google.com/file/d/10kc1evXaU6gW1XUthezoBVENrDguuzZI/view?usp=sharing`
+
 ## Authors
 
 Contributors are:
